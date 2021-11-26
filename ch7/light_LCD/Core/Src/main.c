@@ -102,8 +102,8 @@ int main(void)
 		
     /* USER CODE BEGIN 3 */
 		LCD_Clear(BLACK);//清屏为黑色
-		//LCD_ShowString(5,10,240,32,32,"BearPiLCDTest");//显示字符串，字体大小32*32
-		PutChinese_strings(10,100,"¥",0);
+		LCD_ShowString(5,10,240,32,32,"BearPiLCDTest");//显示字符串，字体大小32*32
+		PutChinese_strings(10,100,"\xCE\xEF\xC1\xAA\xCD\xF8\xB9\xA4\xB3\xCC",0);//显示汉字"物联网工程",
 		//LCD_ShowString(10,50,240,16,16,"Welcome to IoT CluB!");//显示字符串，字体大小16*16
 		//LCD_ShowString(10,50+24,240,24,24,"to IoT CluB!");//显示字符串，字体大小24*24
 		//LCD_ShowString(10,50+24+32,240,32,32,"!");//显示字符串，字体大小32*32
@@ -113,19 +113,23 @@ int main(void)
 		HAL_Delay(1000);//延时1秒
 		LCD_Clear(BLUE);//清屏为蓝色
 		
-		
-		PutChinese_strings(10,20,"",0);
-		//LCD_Draw_Circle(120,120,100);//画圈，半径r=100
-		//LCD_Draw_Circle(120,120,80);//画圈，半径r=80
-		//LCD_Draw_Circle(120,120,60);//画圈，半径r=60
-		//LCD_Draw_Circle(120,120,40);//画圈，半径r=40
-		//LCD_Draw_Circle(120,120,20);//画圈，半径r=20
+		LCD_Draw_Circle(120,120,100);//画圈，半径r=100
+		LCD_Draw_Circle(120,120,80);//画圈，半径r=80
+		LCD_Draw_Circle(120,120,60);//画圈，半径r=60
+		LCD_Draw_Circle(120,120,40);//画圈，半径r=40
+		LCD_Draw_Circle(120,120,20);//画圈，半径r=20
 		
 		HAL_Delay(1000);//延时1秒
-		LCD_Clear(RED);//清屏为红色
+		LCD_Clear(BLACK);//清屏为黑色
 		
-		LCD_DrawLine(0,0,100,100);//画直线
+		//画正方形
+		LCD_DrawLine(50,50,50,100);//画直线
+		LCD_DrawLine(50,100,100,100);
+		LCD_DrawLine(100,100,100,50);
+		LCD_DrawLine(50,50,100,50);
+		HAL_Delay(1000);//延时1秒
 		
+		LCD_Clear(BLACK);//清屏为黑色
 		HAL_GPIO_WritePin(LED_GPIO_Port,LED_Pin,GPIO_PIN_RESET);//熄灭LED灯
 		HAL_Delay(1000);//延时1秒
   }
