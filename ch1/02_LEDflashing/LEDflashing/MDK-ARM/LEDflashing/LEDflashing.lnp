@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp.sp --branchpatch=sdcomp-29491-629360
+"ledflashing\startup_stm32l431xx.o"
+"ledflashing\main.o"
+"ledflashing\gpio.o"
+"ledflashing\stm32l4xx_it.o"
+"ledflashing\stm32l4xx_hal_msp.o"
+"ledflashing\stm32l4xx_hal_tim.o"
+"ledflashing\stm32l4xx_hal_tim_ex.o"
+"ledflashing\stm32l4xx_hal.o"
+"ledflashing\stm32l4xx_hal_i2c.o"
+"ledflashing\stm32l4xx_hal_i2c_ex.o"
+"ledflashing\stm32l4xx_hal_rcc.o"
+"ledflashing\stm32l4xx_hal_rcc_ex.o"
+"ledflashing\stm32l4xx_hal_flash.o"
+"ledflashing\stm32l4xx_hal_flash_ex.o"
+"ledflashing\stm32l4xx_hal_flash_ramfunc.o"
+"ledflashing\stm32l4xx_hal_gpio.o"
+"ledflashing\stm32l4xx_hal_dma.o"
+"ledflashing\stm32l4xx_hal_dma_ex.o"
+"ledflashing\stm32l4xx_hal_pwr.o"
+"ledflashing\stm32l4xx_hal_pwr_ex.o"
+"ledflashing\stm32l4xx_hal_cortex.o"
+"ledflashing\stm32l4xx_hal_exti.o"
+"ledflashing\system_stm32l4xx.o"
+--nodebug --strict --scatter "LEDflashing\LEDflashing.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "LEDflashing.map" -o LEDflashing\LEDflashing.axf
